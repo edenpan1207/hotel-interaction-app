@@ -1,0 +1,76 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Single Room",
+      "price": {
+        "normal": 1380,
+        "weekend": 1500
+      },
+      "detail": {
+        "person": 1,
+        "bed": "單人床",
+        "addon": "附早餐",
+        "bathroom": 1,
+        "size": 18
+      },
+      "checkinTime": {
+        "early": "15:00",
+        "late": "21:00"
+      },
+      "checkoutTime": "10:00",
+      "description": [
+        "description info 1",
+        "description info 2",
+        "description info 3",
+        "description info 4"
+      ],
+      "icons": [
+        {
+          "name": "breakfast",
+          "exist": false 
+        },
+        {
+          "name": "phone",
+          "exist": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Double Room",
+      "price": {
+        "normal": 2380,
+        "weekend": 26000
+      },
+      "detail": {
+        "person": 2,
+        "bed": "雙人床",
+        "addon": "附早餐",
+        "bathroom": 1,
+        "size": 30
+      },
+      "checkinTime": {
+        "early": "15:00",
+        "late": "21:00"
+      },
+      "checkoutTime": "10:00",
+      "description": [
+        "description info 1",
+        "description info 2",
+        "description info 3",
+        "description info 4"
+      ],
+      "icons": [
+        {
+          "name": "breakfast",
+          "exist": false 
+        },
+        {
+          "name": "phone",
+          "exist": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { Route } from "react-router-dom";
+import "./App.css";
+import RoomsOverview from "./pages/RoomsOverview";
+import RoomsDetail from "./pages/RoomsDetail";
+import RoomsBooking from './pages/RoomsBooking';
+import { fetchTarget } from "./redux/actions/fetchRoom";
+import { useDispatch } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchTarget());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Route exact path="/" component={RoomsOverview} />
+      <Route path="/room/:id" component={RoomsDetail} />
+      <Route path="/booking" component={RoomsBooking} />      
+    </>
   );
 }
 
