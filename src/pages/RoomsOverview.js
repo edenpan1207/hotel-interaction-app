@@ -4,17 +4,20 @@ import { Link } from "react-router-dom";
 
 const RoomsOverview = () => {
   const rooms = useSelector((state) => state.fetchRoom);
-  const { results } = rooms;
-
+  const { results, isLoading } = rooms;
   return (
     <>
-      {Object.values(results).map((result) => {
-        return (
-          <Link to={`room/${result.id}`} key={result.id}>
-            {result.name}
-          </Link>
-        );
-      })}
+      {isLoading ? (
+        <div>Loading ...</div>
+      ) : (
+        Object.values(results).map((result) => {
+          return (
+            <Link to={`room/${result.id}`} key={result.id}>
+              {result.name}
+            </Link>
+          );
+        })
+      )}
     </>
   );
 };

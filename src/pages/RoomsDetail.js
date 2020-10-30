@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CalendarPicker from "../components/CalendarPicker";
 import { bookingRoom } from '../redux/actions/bookingRoom';
@@ -7,7 +7,6 @@ const RoomsDetail = ({ match, history }) => {
   const dispatch = useDispatch();
   const pageId = match.params.id;
   const selector = useSelector((state) => state.fetchRoom);
-  const date = useSelector((state) => state.setDate);
 
   const BookingRoomHandler = () => {
     dispatch(bookingRoom({
